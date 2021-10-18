@@ -28,7 +28,7 @@ nav{
 }
 
 main{
-  background-color: tan;
+  
   --hue: var(--hue-neutral);
   background-color: hsl(var(--hue), 100%, 20%);
 
@@ -83,19 +83,22 @@ main.wrong{
   margin-bottom: 25px;
   color: black;
 }
+.btn-grid{
+  display: grid;
 
-.answer{
+}
+.answer, button{
+
   --hue: var(--hue-neutral);
   border: 1px solid hsl(var(--hue), 100%, 30%);
   background-color: hsl(var(--hue), 100%, 50%);
   width: 60%;
   border-radius: 5px;
-  padding: 5px 10px;
-  color: white;
   outline: none;
   margin-left: 20%;
   margin-bottom: 10px;
 }
+
 
 h3{
   display: flex;
@@ -117,12 +120,12 @@ h3{
   box-shadow: 0 0 10px 2px;
 }
 
-.answer.correct{
+.btn.correct{
   --hue: var(--hue-correct);
   color: black;
 }
 
-.answer.wrong{
+.btn.wrong{
   --hue: var(--hue-wrong);
 }
 

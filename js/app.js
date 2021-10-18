@@ -23,7 +23,7 @@ const questions = [
 
 //control buttons
 const startButton = document.getElementById('start-button')
-
+const nextButton = document.getElementById('next-button')
 //question buttons
 const htmlBtn = document.querySelector("#html-button")
 const cssBtn = document.querySelector("#css-button")
@@ -36,6 +36,7 @@ const questionContainer = document.querySelector("#question-container")
 const quizContainer = document.querySelector("#quiz-container")
 const answerButtons = document.querySelector("#answer-buttons")
 const questionEl = document.getElementById('question')
+const answerEl = document.querySelectorAll('answer')
 
 
 //ANSWER BUTTONS
@@ -110,13 +111,52 @@ function startGame(){
 }
 
 function setNextQuestion(){
+  resetState()
   showQuestion(randomQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question){
   questionEl.innerText = question.question
+  question.answers.forEach(choice => {
+    let button = document.createElement('button')
+    button.innerText = choice.text
+    if (choice.correct){
+      button.dataset.correct = choice.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtons.appendChild(button)
+  });
+
 }
 
-function selectAnswer(){
-
+function resetState(){
+  nextButton.classList.add('hide')
+  while (answerButtons.firstChild){
+    answerButtons.removeChild(answerButtons.firstChild)
+  }
 }
+
+function selectAnswer(event){
+  let selectedBtn = event.target
+  let correct = selectedBtn.dataset.correct
+  setStatusClass(document.body, correct)
+  Array.from(answerButtons.children).forEach(button =>{
+    setStatusClass(button, button.dataset.correct)
+  })
+}
+
+function setStatusClass(el, correct){
+  clearStatusClass(el)
+  if(correct){
+    el.classList.add('correct')
+  }
+  else{
+    el.classList.add('wrong')
+  }
+}
+
+function clearStatusClass(element){
+  element.classList.remove('wrong')
+  element.classList.remove('correct')
+}
+
