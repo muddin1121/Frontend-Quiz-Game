@@ -111,54 +111,58 @@ function startGame(){
 }
 
 function setNextQuestion(){
-
+  resetState()
   showQuestion(randomQuestions[currentQuestionIndex])
 }
 
 function showQuestion(question){
   questionEl.innerText = question.question
-  question.answers.forEach(choice => {
+  question.answers.forEach(answer => {
     let button = document.createElement('button')
-    button.innerText = choice.text
-    button.classList.add('answer')
-
+    button.innerText = answer.text
+    button.classList.add('answer') 
+    button.classList.add('btn') 
+    if (answer.correct){
+      button.dataset.correct = answer.correct
+    }
+    button.addEventListener('click', selectAnswer)
+    answerButtons.appendChild(button)
   });
 
 
 
 
 
-
 }
 
-// function resetState(){
-//   nextButton.classList.add('hide')
-//   while (answerButtons.firstChild){
-//     answerButtons.removeChild(answerButtons.firstChild)
-//   }
-// }
+function resetState(){
+  nextButton.classList.add('hide')
+  while (answerButtons.firstChild){
+    answerButtons.removeChild(answerButtons.firstChild)
+  }
+}
 
-// function selectAnswer(event){
-//   let selectedBtn = event.target
-//   let correct = selectedBtn.dataset.correct
-//   setStatusClass(document.body, correct)
-//   Array.from(answerButtons.children).forEach(button =>{
-//     setStatusClass(button, button.dataset.correct)
-//   })
-// }
+function selectAnswer(event){
+  let selectedBtn = event.target
+  let correct = selectedBtn.dataset.correct
+  setStatusClass(document.body, correct)
+  Array.from(answerButtons.children).forEach(button =>{
+    setStatusClass(button, button.dataset.correct)
+  })
+}
 
-// function setStatusClass(el, correct){
-//   clearStatusClass(el)
-//   if(correct){
-//     el.classList.add('correct')
-//   }
-//   else{
-//     el.classList.add('wrong')
-//   }
-// }
+function setStatusClass(el, correct){
+  clearStatusClass(el)
+  if(correct){
+    el.classList.add('correct')
+  }
+  else{
+    el.classList.add('wrong')
+  }
+}
 
-// function clearStatusClass(element){
-//   element.classList.remove('wrong')
-//   element.classList.remove('correct')
-// }
+function clearStatusClass(element){
+  element.classList.remove('wrong')
+  element.classList.remove('correct')
+}
 

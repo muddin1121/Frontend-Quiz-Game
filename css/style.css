@@ -127,6 +127,7 @@ h3{
 
 .btn.wrong{
   --hue: var(--hue-wrong);
+  color: white;
 }
 
 #start-button, #next-button, #reset-button{
