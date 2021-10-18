@@ -12,6 +12,17 @@ const questions = [
       {text: 'Hot Text Mail Language', correct: false}
 
     ]
+  },
+
+  {
+    question: 'What is HTML responsible for?',
+    answers: [
+      {text: 'Creating webpages', correct: true},
+      {text: 'Creating tomatoes', correct: false},
+      {text: 'Creating Stylesheets', correct: false},
+      {text: 'Creating functions', correct: false}
+
+    ]
   }
 ]
 
@@ -91,6 +102,11 @@ ans4.addEventListener('click', () => {
 
 //CONTROL
 startButton.addEventListener('click', startGame)
+nextButton.addEventListener('click', () => {
+  currentQuestionIndex = currentQuestionIndex +1
+  setNextQuestion()
+})
+resetBtn.addEventListener('click', resetGame) 
 
 
 
@@ -98,7 +114,13 @@ startButton.addEventListener('click', startGame)
 
 
 /*-------------------------------- Functions --------------------------------*/
+function resetGame(){
+  startButton.classList.remove('hide')
+  questionContainer.classList.add('hide')
+  answerButtons.classList.add('hide')
+  resetBtn.classList.add('hide')
 
+}
 function startGame(){
   console.log('started')
   startButton.classList.add('hide')
@@ -149,6 +171,13 @@ function selectAnswer(event){
   Array.from(answerButtons.children).forEach(button =>{
     setStatusClass(button, button.dataset.correct)
   })
+  if(randomQuestions.length > currentQuestionIndex + 1){
+    nextButton.classList.remove('hide')
+  }
+
+
+  
+  resetBtn.classList.remove('hide')
 }
 
 function setStatusClass(el, correct){
