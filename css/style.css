@@ -87,7 +87,7 @@ main.wrong{
   display: grid;
 
 }
-.answer, button{
+.answer{
 
   --hue: var(--hue-neutral);
   border: 1px solid hsl(var(--hue), 100%, 30%);
