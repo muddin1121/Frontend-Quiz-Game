@@ -29,25 +29,31 @@
 
 
 <aside>
-  <button id="html-button" class="btn btn-outline-info">HTML</button> 
-  <button id="css-button" class="btn btn-outline-success">CSS</button> 
-  <button id="javascript-button" class="btn btn-outline-danger">JavaScript</button> 
-  <button id="create-button" class="btn btn-outline-warning">Create Your Own</button> 
+  <button id="html-button" class="btn btn-outline-info side-bar">HTML</button> 
+  <button id="css-button" class="btn btn-outline-success side-bar">CSS</button> 
+  <button id="javascript-button" class="btn btn-outline-danger side-bar">JavaScript</button> 
+  <button id="create-button" class="btn btn-outline-warning side-bar">Create Your Own</button> 
 </aside>
 
 
 <main>
 
-  <div id="score-reset-container">  
-    Score Box
-    <button id="reset-button" class="btn btn-danger">RESET</button>    
+  <div id="score-box">  
+    <h3>Score Box</h3>
   </div>
   
-  <div id="quiz-container">
 
-    <!-- quiz container -->
+  <div id="quiz-container">
+    <div id = "question">This is where the question will display</div>
+
+    <button id="answer-1" class="btn btn-primary btn-lg btn-block answer">Answer 1</button>  <br>
+    <button id="answer-2" class="btn btn-primary btn-lg btn-block answer">Answer 2</button>  <br>
+    <button id="answer-3" class="btn btn-primary btn-lg btn-block answer">Answer 3</button>  <br>
+    <button id="answer-4" class="btn btn-primary btn-lg btn-block answer">Answer 4</button>  <br>
 
   </div>
+
+  <button id="reset-button" class="btn btn-danger">RESET</button>    
 </main>
 
 
