@@ -36,7 +36,7 @@
 </aside>
 
 
-<main>
+<main class="">
 
   <div id="score-box">  
     <h3>Score Box</h3>
@@ -44,16 +44,25 @@
   
 
   <div id="quiz-container">
-    <div id = "question">This is where the question will display</div>
+    
+    <div id = "question-container" class="hide">
+      <div id="question">This is where the questions go</div>
+    </div>
 
-    <button id="answer-1" class="btn btn-primary btn-lg btn-block answer">Answer 1</button>  <br>
-    <button id="answer-2" class="btn btn-primary btn-lg btn-block answer">Answer 2</button>  <br>
-    <button id="answer-3" class="btn btn-primary btn-lg btn-block answer">Answer 3</button>  <br>
-    <button id="answer-4" class="btn btn-primary btn-lg btn-block answer">Answer 4</button>  <br>
+    <div id="answer-buttons" class="btn-grid hide">
+      <button id="answer-1" class="btn btn-primary btn-lg btn-block answer">Answer 1</button>  <br>
+      <button id="answer-2" class="btn btn-primary btn-lg btn-block answer">Answer 2</button>  <br>
+      <button id="answer-3" class="btn btn-primary btn-lg btn-block answer">Answer 3</button>  <br>
+      <button id="answer-4" class="btn btn-primary btn-lg btn-block answer">Answer 4</button>  <br>
+    </div>
 
+  <div class="controls">  
+    <button id="reset-button" class="btn btn-danger hide">Reset</button>  
+    <button id="start-button" class="btn btn-danger">Start</button>
+    <button id="next-button" class="btn btn-danger hide">Next</button>    
   </div>
-
-  <button id="reset-button" class="btn btn-danger">RESET</button>    
+</div>  
+    
 </main>
 
 
@@ -62,7 +71,7 @@
 
 
 
-<footer></footer>
+<footer>footer</footer>
 
 </body>
 

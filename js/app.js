@@ -1,22 +1,42 @@
 
 
 /*-------------------------------- Constants --------------------------------*/
+let randomQuestions, currentQuestionIndex
+const questions = [
+  {
+    question: 'What does HTML stand for?',
+    answers: [
+      {text: 'Hypertext Markup Language', correct: true},
+      {text: 'Hot Tomatoes', correct: false},
+      {text: 'Hypertext Made Language', correct: false},
+      {text: 'Hot Text Mail Language', correct: false}
 
-
+    ]
+  }
+]
 
 /*---------------------------- Variables (state) ----------------------------*/
 
 
 
 /*------------------------ Cached Element References ------------------------*/
+
+//control buttons
+const startButton = document.getElementById('start-button')
+
 //question buttons
 const htmlBtn = document.querySelector("#html-button")
 const cssBtn = document.querySelector("#css-button")
 const javascriptBtn = document.querySelector("#javascript-button")
 const createBtn = document.querySelector("#create-button")
 const resetBtn = document.querySelector("#reset-button")
+const questionContainer = document.querySelector("#question-container")
 
+//containers
 const quizContainer = document.querySelector("#quiz-container")
+const answerButtons = document.querySelector("#answer-buttons")
+const questionEl = document.getElementById('question')
+
 
 //ANSWER BUTTONS
 const ans1 = document.querySelector("#answer-1")
@@ -68,6 +88,35 @@ ans4.addEventListener('click', () => {
   console.log('answer 4 button works!')
 })
 
+//CONTROL
+startButton.addEventListener('click', startGame)
+
+
+
+
 
 
 /*-------------------------------- Functions --------------------------------*/
+
+function startGame(){
+  console.log('started')
+  startButton.classList.add('hide')
+  questionContainer.classList.remove('hide')
+  answerButtons.classList.remove('hide')
+  randomQuestions = questions.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
+  currentQuestionIndex = 0
+
+  setNextQuestion()
+}
+
+function setNextQuestion(){
+  showQuestion(randomQuestions[currentQuestionIndex])
+}
+
+function showQuestion(question){
+  questionEl.innerText = question.question
+}
+
+function selectAnswer(){
+
+}
