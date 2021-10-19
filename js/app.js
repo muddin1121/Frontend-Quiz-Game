@@ -336,6 +336,7 @@ const mainEl = document.getElementById('answerStatus')
 //control buttons
 const startButton = document.getElementById('start-button')
 const nextButton = document.getElementById('next-button')
+const messageEl = document.getElementById('quiz-message')
 //question buttons
 const htmlBtn = document.querySelector("#html-button")
 const cssBtn = document.querySelector("#css-button")
@@ -360,18 +361,29 @@ const ans4 = document.querySelector("#answer-4")
 
 /*----------------------------- Event Listeners -----------------------------*/
 
-// REGULAR BUTTONS
+// SIDE BUTTONS
 
 htmlBtn.addEventListener('click', () => {
-  console.log('HTML button works!')
+  randomCSSQuestions = htmlQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
+  currentQuestionIndex = 0
+  startButton.classList.remove('hide')
+  messageEl.classList.add('hide')
 })
 
 cssBtn.addEventListener('click', () => {
   console.log('CSS button works!')
+  randomCSSQuestions = cssQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
+  currentQuestionIndex = 0
+  startButton.classList.remove('hide')
+  messageEl.classList.add('hide')
 })
 
 javascriptBtn.addEventListener('click', () => {
   console.log('JavaScript button works!')
+  randomCSSQuestions = javascriptQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
+  currentQuestionIndex = 0
+  startButton.classList.remove('hide')
+  messageEl.classList.add('hide')
 })
 
 createBtn.addEventListener('click', () => {
@@ -400,7 +412,7 @@ ans4.addEventListener('click', () => {
   console.log('answer 4 button works!')
 })
 
-//SIDEBAR
+
 
 //CONTROL
 startButton.addEventListener('click', startGame)
@@ -423,15 +435,18 @@ function resetGame(){
   answerButtons.classList.add('hide')
   resetBtn.classList.add('hide')
   nextButton.classList.add('hide')
+  startButton.classList.add('hide')
   mainEl.style.backgroundColor = 'cornflowerblue'
+  messageEl.classList.remove('hide')
 
 }
 function startGame(){
+  
   startButton.classList.add('hide')
   questionContainer.classList.remove('hide')
   answerButtons.classList.remove('hide')
-  randomCSSQuestions = cssQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
-  currentQuestionIndex = 0
+  // randomCSSQuestions = cssQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
+  // currentQuestionIndex = 0
 
   setNextQuestion()
 }
@@ -489,11 +504,11 @@ function setStatusClass(el, correct){
 
   if(correct){
     el.classList.add('correct')
-    mainEl.style.backgroundColor = 'green'
+    mainEl.style.backgroundColor = '#6CB4EE'
   }
   else if(!correct){
     el.classList.add('wrong')
-    mainEl.style.backgroundColor = '#f47174'
+    mainEl.style.backgroundColor = '#6CB4EE'
   }
 }
 
