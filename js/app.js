@@ -23,6 +23,57 @@ const questions = [
       {text: 'Creating functions', correct: false}
 
     ]
+  },
+
+  {
+    question: 'What is HTML responsible for?',
+    answers: [
+      {text: 'Creating webpages', correct: true},
+      {text: 'Creating tomatoes', correct: false},
+      {text: 'Creating Stylesheets', correct: false},
+      {text: 'Creating functions', correct: false}
+
+    ]
+  },
+  {
+    question: 'What is HTML responsible for?',
+    answers: [
+      {text: 'Creating webpages', correct: true},
+      {text: 'Creating tomatoes', correct: false},
+      {text: 'Creating Stylesheets', correct: false},
+      {text: 'Creating functions', correct: false}
+
+    ]
+  },
+  {
+    question: 'What is HTML responsible for?',
+    answers: [
+      {text: 'Creating webpages', correct: true},
+      {text: 'Creating tomatoes', correct: false},
+      {text: 'Creating Stylesheets', correct: false},
+      {text: 'Creating functions', correct: false}
+
+    ]
+  },
+  {
+    question: 'What is HTML responsible for?',
+    answers: [
+      {text: 'Creating webpages', correct: true},
+      {text: 'Creating tomatoes', correct: false},
+      {text: 'Creating Stylesheets', correct: false},
+      {text: 'Creating functions', correct: false}
+
+    ]
+  },
+  {
+    question: 'What is HTML responsible for?',
+    answers: [
+      {text: 'Creating webpages', correct: true},
+      {text: 'Creating tomatoes', correct: false},
+      {text: 'Creating Stylesheets', correct: false},
+      {text: 'Creating functions', correct: false}
+
+    ]
   }
 ]
 
@@ -31,7 +82,7 @@ const questions = [
 
 
 /*------------------------ Cached Element References ------------------------*/
-
+const mainEl = document.getElementById('answerStatus')
 //control buttons
 const startButton = document.getElementById('start-button')
 const nextButton = document.getElementById('next-button')
@@ -78,7 +129,6 @@ createBtn.addEventListener('click', () => {
 })
 
 resetBtn.addEventListener('click', () => {
-  console.log('Reset button works!')
 })
 
 //ANSWER BUTTONS
@@ -122,7 +172,6 @@ function resetGame(){
 
 }
 function startGame(){
-  console.log('started')
   startButton.classList.add('hide')
   questionContainer.classList.remove('hide')
   answerButtons.classList.remove('hide')
@@ -182,16 +231,21 @@ function selectAnswer(event){
 
 function setStatusClass(el, correct){
   clearStatusClass(el)
+
   if(correct){
     el.classList.add('correct')
+    mainEl.classList.add('correct')
   }
   else{
     el.classList.add('wrong')
+    mainEl.classList.add('wrong')
   }
 }
 
 function clearStatusClass(element){
   element.classList.remove('wrong')
+  mainEl.classList.remove('correct')
   element.classList.remove('correct')
+  mainEl.classList.remove('wrong')
 }
 

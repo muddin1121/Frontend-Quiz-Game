@@ -1,5 +1,5 @@
 :root{
-  --hue-neutral: 200;
+  --hue-neutral: 900;
   --hue-wrong: 0;
   --hue-correct: 145;
 
@@ -54,7 +54,7 @@ footer {
   width: 100px;
 }
 
-main.correct{
+main.correct,button.correct{
   --hue: var(--hue-correct);
 }
 
