@@ -54,12 +54,14 @@ footer {
   width: 100px;
 }
 
-main.correct,button.correct{
-  --hue: var(--hue-correct);
+main.correct{
+  
+  background-color: green;
 }
 
 main.wrong{
-  --hue: var(--hue-wrong);
+  
+  background-color: red;
 }
 
 
@@ -131,7 +133,7 @@ h3{
 }
 
 #start-button, #next-button, #reset-button{
-  margin-right:50px;
+  margin-right: 50px;
   margin-left:  25px;
 }
 .hide{

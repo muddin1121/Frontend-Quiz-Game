@@ -169,6 +169,8 @@ function resetGame(){
   questionContainer.classList.add('hide')
   answerButtons.classList.add('hide')
   resetBtn.classList.add('hide')
+  nextButton.classList.add('hide')
+  mainEl.style.backgroundColor = 'cornflowerblue'
 
 }
 function startGame(){
@@ -234,18 +236,18 @@ function setStatusClass(el, correct){
 
   if(correct){
     el.classList.add('correct')
-    mainEl.classList.add('correct')
+    mainEl.style.backgroundColor = 'green'
   }
-  else{
+  else if(!correct){
     el.classList.add('wrong')
-    mainEl.classList.add('wrong')
+    mainEl.style.backgroundColor = '#f47174'
   }
 }
 
 function clearStatusClass(element){
   element.classList.remove('wrong')
-  mainEl.classList.remove('correct')
+  mainEl.style.backgroundColor = 'blue'
   element.classList.remove('correct')
-  mainEl.classList.remove('wrong')
+
 }
 
