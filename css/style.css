@@ -139,3 +139,7 @@ h3{
 .hide{
   display: none;
 }
+
+#quiz-message{
+  color: red;
+}

@@ -309,8 +309,9 @@ const javascriptQuiz = [
     answers: [
       {text: 'if(a!=null)', correct: false},
       {text: 'if(a!null)', correct: false},
-      {text: 'if (a!)', correct: false},
-      {text: 'if(a!==null)', correct: true}
+      {text: 'if(a!==null)', correct: true},
+      {text: 'if (a!)', correct: false}
+      
   
     ]
   },
