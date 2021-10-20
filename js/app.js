@@ -1,7 +1,7 @@
 
 
 /*-------------------------------- Constants --------------------------------*/
-let randomHTMLQuestions, currentQuestionIndex, randomCSSQuestions, randomJSQuestions
+
 
 
 const htmlQuiz = [
@@ -331,6 +331,10 @@ const javascriptQuiz = [
 /*---------------------------- Variables (state) ----------------------------*/
 
 
+let randomHTMLQuestions, currentQuestionIndex, randomCSSQuestions, randomJSQuestions
+
+let score = 10
+
 
 /*------------------------ Cached Element References ------------------------*/
 const mainEl = document.getElementById('answerStatus')
@@ -359,6 +363,10 @@ const ans2 = document.querySelector("#answer-2")
 const ans3 = document.querySelector("#answer-3")
 const ans4 = document.querySelector("#answer-4")
 
+
+//TIMER
+let countdownEl = document.getElementById('countdown')
+let labelEl = document.getElementById('label')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -519,4 +527,27 @@ function clearStatusClass(element){
   element.classList.remove('correct')
 
 }
+
+
+
+
+
+//TIMER
+
+
+
+// Start off with 10 seconds on the timer
+let timeLeft = 10
+
+let timer = setInterval(function() {
+	// Each time the function is called, decrease the remaining time by 1
+	countdownEl.textContent = `${timeLeft} seconds`
+  timeLeft -= 1
+  if(timeLeft < 0){
+    countdownEl.textContent=  score
+    labelEl.innerText = 'Score:'
+    clearInterval(timer)
+  }
+	console.log(timeLeft)
+}, 1000) // Don't forget to include the interval of 1000 ms!
 
