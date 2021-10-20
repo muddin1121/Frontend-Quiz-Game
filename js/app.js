@@ -334,8 +334,8 @@ const javascriptQuiz = [
 let randomHTMLQuestions, currentQuestionIndex, randomCSSQuestions, randomJSQuestions
 
 let score = 10
-
-
+let timeLeft
+let bool = false // will stop timer if something is clicked
 /*------------------------ Cached Element References ------------------------*/
 const mainEl = document.getElementById('answerStatus')
 //control buttons
@@ -367,6 +367,7 @@ const ans4 = document.querySelector("#answer-4")
 //TIMER
 let countdownEl = document.getElementById('countdown')
 let labelEl = document.getElementById('label')
+let timeStoppedEl = document.getElementById('timeStopped')
 
 /*----------------------------- Event Listeners -----------------------------*/
 
@@ -447,7 +448,10 @@ function resetGame(){
   startButton.classList.add('hide')
   mainEl.style.backgroundColor = 'cornflowerblue'
   messageEl.classList.remove('hide')
-
+  bool = false
+  score= 0
+  labelEl.textContent = `Score: ${score}`
+  timeStoppedEl.textContent = 'Time: '
 }
 function startGame(){
   
@@ -467,11 +471,31 @@ function setNextQuestion(){
 
 function showQuestion(question){
   questionEl.innerText = question.question
+  
+  timeStoppedEl.classList.add('hide')
+  countdownEl.classList.remove('hide')
+    
+  timeLeft = 10
+
+  let timer = setInterval(function() {
+      // Each time the function is called, decrease the remaining time by 1
+      
+      countdownEl.textContent = `Time: ${timeLeft}`
+    
+      timeLeft -= 1
+      if(bool || timeLeft<0){
+        clearInterval(timer)
+      }
+    }, 1000) // Don't forget to include the interval of 1000 ms!
+
+
   question.answers.forEach(answer => {
     let button = document.createElement('button')
     button.innerText = answer.text
     button.classList.add('answer') 
     button.classList.add('btn') 
+
+
     if (answer.correct){
       button.dataset.correct = answer.correct
     }
@@ -487,6 +511,8 @@ function showQuestion(question){
 
 function resetState(){
   nextButton.classList.add('hide')
+  bool = false
+  timeStoppedEl.textContent = 'Time: '
   while (answerButtons.firstChild){
     answerButtons.removeChild(answerButtons.firstChild)
   }
@@ -495,6 +521,13 @@ function resetState(){
 function selectAnswer(event){
   let selectedBtn = event.target
   let correct = selectedBtn.dataset.correct
+  bool=true
+  timeStoppedEl.classList.remove('hide')
+  countdownEl.classList.add('hide')
+  let currentTime = timeLeft 
+  timeStoppedEl.textContent = `Time: ${currentTime+1}`
+  score = score + ((currentTime+1) *10)
+  labelEl.textContent = `Score: ${score}`
   setStatusClass(document.body, correct)
   Array.from(answerButtons.children).forEach(button =>{
     setStatusClass(button, button.dataset.correct)
@@ -536,18 +569,15 @@ function clearStatusClass(element){
 
 
 
-// Start off with 10 seconds on the timer
-let timeLeft = 10
 
-let timer = setInterval(function() {
-	// Each time the function is called, decrease the remaining time by 1
-	countdownEl.textContent = `${timeLeft} seconds`
-  timeLeft -= 1
-  if(timeLeft < 0){
-    countdownEl.textContent=  score
-    labelEl.innerText = 'Score:'
-    clearInterval(timer)
-  }
-	console.log(timeLeft)
-}, 1000) // Don't forget to include the interval of 1000 ms!
+
+// let timer = setInterval(function() {
+// 	// Each time the function is called, decrease the remaining time by 1
+// 	countdownEl.textContent = `Time: ${timeLeft}`
+
+//   timeLeft -= 1
+//   if(timeLeft < 0){
+//     clearInterval(timer)
+//   }
+// }, 1000) // Don't forget to include the interval of 1000 ms!
 
