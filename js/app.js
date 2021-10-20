@@ -347,7 +347,6 @@ const messageEl = document.getElementById('quiz-message')
 const htmlBtn = document.querySelector("#html-button")
 const cssBtn = document.querySelector("#css-button")
 const javascriptBtn = document.querySelector("#javascript-button")
-const createBtn = document.querySelector("#create-button")
 const resetBtn = document.querySelector("#reset-button")
 const questionContainer = document.querySelector("#question-container")
 
@@ -382,7 +381,7 @@ htmlBtn.addEventListener('click', () => {
 })
 
 cssBtn.addEventListener('click', () => {
-  console.log('CSS button works!')
+  
   randomCSSQuestions = cssQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
   currentQuestionIndex = 0
   startButton.classList.remove('hide')
@@ -390,16 +389,13 @@ cssBtn.addEventListener('click', () => {
 })
 
 javascriptBtn.addEventListener('click', () => {
-  console.log('JavaScript button works!')
+  
   randomCSSQuestions = javascriptQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
   currentQuestionIndex = 0
   startButton.classList.remove('hide')
   messageEl.classList.add('hide')
 })
 
-createBtn.addEventListener('click', () => {
-  console.log('Create button works!')
-})
 
 resetBtn.addEventListener('click', () => {
 })
@@ -408,19 +404,15 @@ resetBtn.addEventListener('click', () => {
 
 
 ans1.addEventListener('click', () => {
-  console.log('answer 1 button works!')
 })
 
 ans2.addEventListener('click', () => {
-  console.log('answer 2 button works!')
 })
 
 ans3.addEventListener('click', () => {
-  console.log('answer 3 button works!')
 })
 
-ans4.addEventListener('click', () => {
-  console.log('answer 4 button works!')
+ans4.addEventListener('click', () => {  
 })
 
 
