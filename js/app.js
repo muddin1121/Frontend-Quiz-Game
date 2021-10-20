@@ -13,7 +13,7 @@ const htmlQuiz = [
       {text: 'Hypertext Markup Language', correct: true},
       {text: 'Hypertext Made Language', correct: false},
       {text: 'HighText Machine Language', correct: false}
-      let firsttopicanswers = [0,3,4,1,3]
+
     ]
   },
 
@@ -536,6 +536,11 @@ function selectAnswer(event){
   labelEl.textContent = `Score: ${score}`
   if(randomCSSQuestions.length > currentQuestionIndex + 1){
     nextButton.classList.remove('hide')
+    
+  }
+  else{
+    labelEl.innerText = `You finished the game! You scored ${score} points`
+    timeStoppedEl.innerText = `Time : `
   }
 
   resetBtn.classList.remove('hide')
