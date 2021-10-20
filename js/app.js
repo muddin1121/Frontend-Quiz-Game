@@ -13,7 +13,7 @@ const htmlQuiz = [
       {text: 'Hypertext Markup Language', correct: true},
       {text: 'Hypertext Made Language', correct: false},
       {text: 'HighText Machine Language', correct: false}
-
+      let firsttopicanswers = [0,3,4,1,3]
     ]
   },
 
@@ -333,9 +333,10 @@ const javascriptQuiz = [
 
 let randomHTMLQuestions, currentQuestionIndex, randomCSSQuestions, randomJSQuestions
 
-let score = 10
+let score = 0
 let timeLeft
 let bool = false // will stop timer if something is clicked
+let currentTime
 /*------------------------ Cached Element References ------------------------*/
 const mainEl = document.getElementById('answerStatus')
 //control buttons
@@ -524,27 +525,35 @@ function selectAnswer(event){
   bool=true
   timeStoppedEl.classList.remove('hide')
   countdownEl.classList.add('hide')
-  let currentTime = timeLeft 
+  currentTime = timeLeft 
   timeStoppedEl.textContent = `Time: ${currentTime+1}`
-  score = score + ((currentTime+1) *10)
-  labelEl.textContent = `Score: ${score}`
+  
+  setScore(document.body, correct)
   setStatusClass(document.body, correct)
   Array.from(answerButtons.children).forEach(button =>{
     setStatusClass(button, button.dataset.correct)
   })
+  labelEl.textContent = `Score: ${score}`
   if(randomCSSQuestions.length > currentQuestionIndex + 1){
     nextButton.classList.remove('hide')
   }
 
-
-  
   resetBtn.classList.remove('hide')
+}
+
+function setScore(el, correct){
+
+  if(correct){
+    score = score + ((currentTime+1) *10)
+
+}
 }
 
 function setStatusClass(el, correct){
   clearStatusClass(el)
 
   if(correct){
+    
     el.classList.add('correct')
     mainEl.style.backgroundColor = '#6CB4EE'
   }
