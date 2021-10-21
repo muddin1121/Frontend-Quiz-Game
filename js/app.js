@@ -79,12 +79,12 @@ const htmlQuiz = [
     ]
   },
   {
-    question: 'How to add a background color in HTML?',
+    question: 'Which is the correct way to comment out something in HTML?',
     answers: [
-      {text: 'Creating webpages', correct: false},
-      {text: 'Creating tomatoes', correct: true},
-      {text: 'Creating Stylesheets', correct: false},
-      {text: 'Creating functions', correct: false}
+      {text: 'Using ## and #', correct: false},
+      {text: 'Using <!-- and -->', correct: true},
+      {text: 'Using </-- and -/->', correct: false},
+      {text: 'Using <!-- and -!>', correct: false}
 
     ]
   },
@@ -532,7 +532,8 @@ function selectAnswer(event){
   }
   else{
     labelEl.innerText = `You finished the game! You scored ${score} points`
-    timeStoppedEl.innerText = `Time : `
+    timeStoppedEl.classList.add('hide')
+    countdownEl.classList.add('hide')
   }
 
   resetBtn.classList.remove('hide')
