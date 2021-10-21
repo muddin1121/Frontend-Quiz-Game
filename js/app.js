@@ -336,6 +336,7 @@ let randomHTMLQuestions, currentQuestionIndex, randomCSSQuestions, randomJSQuest
 let score = 0
 let timeLeft
 let bool = false // will stop timer if something is clicked
+let clickable = true
 let currentTime
 /*------------------------ Cached Element References ------------------------*/
 const mainEl = document.getElementById('answerStatus')
@@ -374,26 +375,34 @@ let timeStoppedEl = document.getElementById('timeStopped')
 // SIDE BUTTONS
 
 htmlBtn.addEventListener('click', () => {
-  randomCSSQuestions = htmlQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
-  currentQuestionIndex = 0
-  startButton.classList.remove('hide')
-  messageEl.classList.add('hide')
+  if(clickable === true){
+    
+    randomCSSQuestions = htmlQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
+    currentQuestionIndex = 0
+    startButton.classList.remove('hide')
+    messageEl.classList.add('hide')
+
+  }
 })
 
 cssBtn.addEventListener('click', () => {
   
+  if(clickable === true){
   randomCSSQuestions = cssQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
   currentQuestionIndex = 0
   startButton.classList.remove('hide')
   messageEl.classList.add('hide')
+  }
 })
 
+
 javascriptBtn.addEventListener('click', () => {
-  
+  if(clickable === true){
   randomCSSQuestions = javascriptQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
   currentQuestionIndex = 0
   startButton.classList.remove('hide')
   messageEl.classList.add('hide')
+  }
 })
 
 
@@ -444,12 +453,14 @@ function init(){
   bool = false
   score= 0
   labelEl.textContent = `Score: ${score}`
+  clickable = true
 }
 function startGame(){
   
   startButton.classList.add('hide')
   questionContainer.classList.remove('hide')
   answerButtons.classList.remove('hide')
+  clickable = false
   // randomCSSQuestions = cssQuiz.sort(() => Math.random() - .5) // takes the question array and sort it, if it is a negative number it will sort one way and math random will make it sort another way.
   // currentQuestionIndex = 0
 
