@@ -421,7 +421,7 @@ ans4.addEventListener('click', () => {
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex = currentQuestionIndex +1
-  mainEl.style.backgroundColor = 'cornflowerblue'
+  mainEl.style.backgroundColor = '#0e5796'
   setNextQuestion()
 })
 resetBtn.addEventListener('click', init) 
@@ -439,12 +439,11 @@ function init(){
   resetBtn.classList.add('hide')
   nextButton.classList.add('hide')
   startButton.classList.add('hide')
-  mainEl.style.backgroundColor = 'cornflowerblue'
+  mainEl.style.backgroundColor = '#0e5796'
   messageEl.classList.remove('hide')
   bool = false
   score= 0
   labelEl.textContent = `Score: ${score}`
-  timeStoppedEl.textContent = 'Time: '
 }
 function startGame(){
   
