@@ -10,7 +10,7 @@
 
 ## To play the game:
 ---
--[Click here](https://www.google.com) to play the game!
+-[Click here](https://muddin1121.github.io/project_1/) to play the game!
 
 
 ---
@@ -26,7 +26,7 @@
 ---
 Here is my initial wireframe:
 
-![Wireframe](https://imgur.com/gallery/juaWwjW "Wireframe 1")
+![Wireframe](https://i.imgur.com/AYvPqZK.png "Wireframe 1")
 
 
 ---
