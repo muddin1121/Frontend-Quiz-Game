@@ -7,6 +7,13 @@
 ---
 ---
 
+## Description
+---
+#### Users can choose from any of the three Front-End Categories to begin the game. Once ready, they can click start and be have 10 seconds to answer the question corectly. Depnding on how much time it takes to answer a question, points will be added to the score. If you score atleast 500 points you win! You can reset the game and choose another quiz or play the same quiz again!
+
+---
+---
+
 
 ## To play the game:
 ---

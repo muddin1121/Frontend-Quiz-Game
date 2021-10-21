@@ -424,7 +424,7 @@ nextButton.addEventListener('click', () => {
   mainEl.style.backgroundColor = 'cornflowerblue'
   setNextQuestion()
 })
-resetBtn.addEventListener('click', resetGame) 
+resetBtn.addEventListener('click', init) 
 
 
 
@@ -432,7 +432,7 @@ resetBtn.addEventListener('click', resetGame)
 
 
 /*-------------------------------- Functions --------------------------------*/
-function resetGame(){
+function init(){
   startButton.classList.remove('hide')
   questionContainer.classList.add('hide')
   answerButtons.classList.add('hide')
@@ -531,7 +531,13 @@ function selectAnswer(event){
     
   }
   else{
-    labelEl.innerText = `You finished the game! You scored ${score} points`
+    if(score>=500){
+      labelEl.innerText = `You Win! You beat the game scoring ${score} points!`
+    }
+    else{
+      labelEl.innerText = `Sorry! You didnt score enough points to win! You need ${500-score} more points to win.`
+    }
+    
     timeStoppedEl.classList.add('hide')
     countdownEl.classList.add('hide')
   }
