@@ -35,6 +35,17 @@ Here is my initial wireframe:
 
 ![Wireframe](https://i.imgur.com/AYvPqZK.png "Wireframe 1")
 
+Game Screenshot 1:
+![Game Screenshot 1](https://i.imgur.com/L6pVmgd.png "Game Screenshot 1")
+
+Game Screenshot 2
+![Game Screenshot 2](https://i.imgur.com/ji5hzn2.png "Game Screenshot 2")
+
+Game Screenshot 3
+![Game Screenshot 3](https://i.imgur.com/L8DMX3i.png "Game Screenshot 3")
+
+
+
 
 ---
 ---

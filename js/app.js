@@ -381,6 +381,7 @@ htmlBtn.addEventListener('click', () => {
     currentQuestionIndex = 0
     startButton.classList.remove('hide')
     messageEl.classList.add('hide')
+    
 
   }
 })
@@ -454,6 +455,7 @@ function init(){
   score= 0
   labelEl.textContent = `Score: ${score}`
   clickable = true
+
 }
 function startGame(){
   
@@ -569,17 +571,17 @@ function setStatusClass(el, correct){
   if(correct){
     
     el.classList.add('correct')
-    mainEl.style.backgroundColor = '#6CB4EE'
+    mainEl.style.backgroundColor = '#4385bf'
   }
   else if(!correct){
     el.classList.add('wrong')
-    mainEl.style.backgroundColor = '#6CB4EE'
+    mainEl.style.backgroundColor = '#4385bf'
   }
 }
 
 function clearStatusClass(element){
   element.classList.remove('wrong')
-  mainEl.style.backgroundColor = 'blue'
+  mainEl.style.backgroundColor = '#213373'
   element.classList.remove('correct')
 
 }

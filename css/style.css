@@ -91,7 +91,7 @@ main.wrong{
   text-align: center;
   margin: 10px;  
   margin-bottom: 25px;
-  color: black;
+  color: white;
 }
 .btn-grid{
   display: grid;
@@ -122,15 +122,16 @@ h3{
 #quiz-container {
   width: 800px;
   max-width: 80%;
-  min-height: 150px;
+  min-height: 300px;
   background-color: white;
   border-radius: 5px;
   padding: 5px;
   margin-left: 25%;
   margin-right: 25%;
   box-shadow: 0 0 10px 2px;
-  margin-top:5%
-  
+  margin-top:5%;
+  background-image: url(https://media.giphy.com/media/AOSwwqVjNZlDO/giphy.gif);
+  background-size: cover;
 }
 
 .btn.correct{
@@ -152,18 +153,21 @@ h3{
 }
 
 #quiz-message{
+  /* color: #0f8c2d; */
   color: #0f8c2d;
   text-align: center;
-  margin-top: 75px;
+  margin-top: 200px;
+  background-color: #213373;
 }
 
 #start-button{
   height: 60px;
   width: 500px;
-  margin-top: 25px;
+  margin-top: 100px;
   margin-bottom: 45px;
   font-size: 30px;
-  background-color: black;
+  color: white;
+
 
 }
 h1{
@@ -174,3 +178,4 @@ footer{
   height: 50px;
   padding: 10px;
 }
+
