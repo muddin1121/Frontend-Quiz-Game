@@ -1,10 +1,3 @@
-:root{
-  --hue-neutral: 925;
-  --hue-wrong: 0;
-  --hue-correct: 145;
-
-}
-
 body {
 
   display: grid;
@@ -37,6 +30,17 @@ main{
 
 }
 
+main.correct{
+  
+  background-color: green;
+}
+
+main.wrong{
+  
+  background-color: red;
+}
+
+
 aside {
   background-color: #000e00;
   min-width: 25%;
@@ -52,6 +56,26 @@ footer {
   grid-column: 1 / 3;
 }
 
+h1{
+  font-weight: bold;
+}
+footer{
+  font-size: 10px;
+  height: 50px;
+  padding: 10px;
+}
+
+
+h3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: outset;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
 
 .side-bar {
   
@@ -60,16 +84,6 @@ footer {
   background-color: #000e00;
   margin: 25%;
   
-}
-
-main.correct{
-  
-  background-color: green;
-}
-
-main.wrong{
-  
-  background-color: red;
 }
 
 
@@ -81,18 +95,7 @@ main.wrong{
   align-items: center;
 }
 
-#score-box{
-  text-align: center;
-  background-color: #000e00;
 
-}
-
-#question{
-  text-align: center;
-  margin: 10px;  
-  margin-bottom: 25px;
-  color: white;
-}
 .btn-grid{
   display: grid;
 
@@ -110,13 +113,22 @@ main.wrong{
 }
 
 
-h3{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-style: outset;
-  margin-top: 50px;
-  margin-bottom: 50px;
+.btn.correct{
+  --hue: var(--hue-correct);
+  color: black;
+}
+
+.btn.wrong{
+  --hue: var(--hue-wrong);
+  color: white;
+}
+
+.hide{
+  display: none;
+}
+#next-button, #reset-button{
+  margin-right: 50px;
+  margin-left:  25px;
 }
 
 #quiz-container {
@@ -134,26 +146,20 @@ h3{
   background-size: cover;
 }
 
-.btn.correct{
-  --hue: var(--hue-correct);
-  color: black;
+#score-box{
+  text-align: center;
+  background-color: #000e00;
+
 }
 
-.btn.wrong{
-  --hue: var(--hue-wrong);
+#question{
+  text-align: center;
+  margin: 10px;  
+  margin-bottom: 25px;
   color: white;
 }
 
-#next-button, #reset-button{
-  margin-right: 50px;
-  margin-left:  25px;
-}
-.hide{
-  display: none;
-}
-
 #quiz-message{
-  /* color: #0f8c2d; */
   color: #0f8c2d;
   text-align: center;
   margin-top: 200px;
@@ -170,12 +176,10 @@ h3{
 
 
 }
-h1{
-  font-weight: bold;
-}
-footer{
-  font-size: 10px;
-  height: 50px;
-  padding: 10px;
-}
 
+:root{
+  --hue-neutral: 925;
+  --hue-wrong: 0;
+  --hue-correct: 145;
+
+}

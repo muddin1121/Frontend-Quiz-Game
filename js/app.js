@@ -589,20 +589,3 @@ function clearStatusClass(element){
 
 
 
-
-//TIMER
-
-
-
-
-
-// let timer = setInterval(function() {
-// 	// Each time the function is called, decrease the remaining time by 1
-// 	countdownEl.textContent = `Time: ${timeLeft}`
-
-//   timeLeft -= 1
-//   if(timeLeft < 0){
-//     clearInterval(timer)
-//   }
-// }, 1000) // Don't forget to include the interval of 1000 ms!
-
